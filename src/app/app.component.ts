@@ -4,7 +4,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   template: `
     <nav>
-      <a routerLink="/">Home</a>
+      <a routerLink="/">Blog</a>
+      <a routerLink="/quotes">Quotes</a>
     </nav>
 
     <router-outlet />

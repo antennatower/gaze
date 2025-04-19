@@ -14,12 +14,12 @@ import PostAttributes from '../../post-attributes';
     }
   `,
   imports: [AsyncPipe, MarkdownComponent],
-  selector: 'app-blog-post',
+  selector: 'app-quotes-post',
   standalone: true,
 })
-export default class BlogPostComponent {
+export default class QuotesPostComponent {
   readonly post$ = injectContent<PostAttributes>({
     param: 'slug',
-    subdirectory: 'blog',
+    subdirectory: 'quotes',
   });
 }
