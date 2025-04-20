@@ -6,6 +6,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     <nav>
       <a routerLink="/">Blog</a>
       <a routerLink="/quotes">Quotes</a>
+      <a routerLink="/books">Books</a>
     </nav>
 
     <router-outlet />
