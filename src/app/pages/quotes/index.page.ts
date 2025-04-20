@@ -10,8 +10,8 @@ import PostAttributes from '../blog/post-attributes';
 
     @for (post of posts; track post.attributes.slug) {
       <a [routerLink]="['/quotes/', post.attributes.slug]">
-        <h2 class="post__title">{{ post.attributes.title }}</h2>
-        <p class="post__desc">{{ post.attributes.description }}</p>
+        <h2>{{ post.attributes.title }}</h2>
+        <p>{{ post.attributes.description }}</p>
       </a>
     }
   `,
