@@ -1,5 +1,5 @@
 import { injectContent, MarkdownComponent } from '@analogjs/content';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
@@ -17,21 +17,26 @@ import QuoteAttributes from './quote-attributes';
         <footer
           class="flex justify-between items-end border-t-2 border-dotted border-black "
         >
-          <p class="text-sm italic underline">
+          <p class="text-sm italic underline decoration-dotted">
             {{ quote.attributes.source }}
           </p>
-          <div class="flex gap-2">
-            @for (category of quote.attributes.categories; track $index) {
-              <p class="text-sm italic flex">
-                {{ category }}
-              </p>
-            }
-          </div>
+          <i class="text-sm underline decoration-dotted">{{
+            quote.attributes.date | date
+          }}</i>
+          @if (quote.attributes.categories.length) {
+            <div class="flex gap-2 text-sm underline decoration-dotted">
+              @for (category of quote.attributes.categories; track $index) {
+                <p class="text-sm italic flex">
+                  {{ category }}
+                </p>
+              }
+            </div>
+          }
         </footer>
       </article>
     }
   `,
-  imports: [AsyncPipe, MarkdownComponent],
+  imports: [AsyncPipe, MarkdownComponent, DatePipe],
   selector: 'app-quote',
   standalone: true,
 })

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 import { injectContent, MarkdownComponent } from '@analogjs/content';
 
 import PostAttributes from './post-attributes';
@@ -12,9 +12,13 @@ import PostAttributes from './post-attributes';
         <img [src]="post.attributes.coverImage" />
         <analog-markdown [content]="post.content" />
       </article>
+      <!-- do the decoration on top -->
+      <i class="text-sm underline decoration-dotted">{{
+        post.attributes.date | date
+      }}</i>
     }
   `,
-  imports: [AsyncPipe, MarkdownComponent],
+  imports: [AsyncPipe, MarkdownComponent, DatePipe],
   selector: 'app-post',
   standalone: true,
 })
