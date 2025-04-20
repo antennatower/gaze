@@ -17,9 +17,30 @@ import { RouterLink, RouterOutlet } from '@angular/router';
           <a class="gaze-anchor" routerLink="/books">Books</a>
         </nav>
       </div>
-      <div class="max-h-[90vh] overflow-y-auto gaze-scrollbar">
+      <div class="max-h-[88vh] overflow-y-auto gaze-scrollbar">
         <router-outlet />
       </div>
+      <footer
+        class="text-sm italic sticky left-[50%]  bottom-0"
+      >
+        <p>
+          <a
+            class="no-underline"
+            href="https://github.com/antennatower/gaze"
+            target="_blank"
+          >
+            Source code
+          </a>
+          &nbsp;|&nbsp;
+          <a
+            class="no-underline"
+            href="https://github.com/antennatower/gaze/blob/main/LICENSE"
+            target="_blank"
+          >
+            License
+          </a>
+        </p>
+      </footer>
     </main>
   `,
   imports: [RouterLink, RouterOutlet],
