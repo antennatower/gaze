@@ -8,7 +8,7 @@ import PostAttributes from './post-attributes';
   template: `
     @if (post$ | async; as post) {
       <article>
-        <img />
+        <img [src]="post.attributes.coverImage" />
         <analog-markdown [content]="post.content" />
       </article>
     }

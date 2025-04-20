@@ -7,7 +7,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       <div class="mb-2">
         <h1
           routerLink="/"
-          class="text-4xl font-bold underline decoration-double decoration-2 mb-4 cursor-pointer bg-black text-white"
+          class="text-4xl font-bold underline decoration-double decoration-2 mb-4 cursor-pointer bg-black text-white select-none"
         >
           Antenna Tower
         </h1>
