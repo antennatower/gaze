@@ -3,13 +3,22 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   template: `
-    <nav>
-      <a routerLink="/">Blog</a>
-      <a routerLink="/quotes">Quotes</a>
-      <a routerLink="/books">Books</a>
-    </nav>
-
-    <router-outlet />
+    <main>
+      <div class="mb-2">
+        <h1
+          routerLink="/"
+          class="text-4xl font-bold underline decoration-double decoration-2 mb-4 cursor-pointer bg-black text-white"
+        >
+          Antenna Tower
+        </h1>
+        <nav class="flex items-start gap-5 border-b-black border-b-2 mb-2">
+          <a class="gaze-anchor" routerLink="/">Blog</a>
+          <a class="gaze-anchor" routerLink="/quotes">Quotes</a>
+          <a class="gaze-anchor" routerLink="/books">Books</a>
+        </nav>
+      </div>
+      <router-outlet />
+    </main>
   `,
   imports: [RouterLink, RouterOutlet],
   selector: 'app-root',
