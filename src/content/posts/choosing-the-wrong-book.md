@@ -1,9 +1,10 @@
 ---
 title: Choosing the Wrong Book
-slug: 2025-04-20-choosing-the-wrong-book
-description:
+slug: 2025-02-01-choosing-the-wrong-book
+description: Will come back to Dostoevsky later...
 coverImage: https://letraslibres.com/wp-content/uploads/2021/11/apuntes-del-subsuelo-dostoyevski-img2-1160x697.jpeg
 categories: ['books', 'fiction']
+date: 2025-02-01
 ---
 
 When I was a kid, I used to read a lot, mostly books chosen by my mother. They were short and easy to read.

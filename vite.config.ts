@@ -28,6 +28,7 @@ export default defineConfig(({ mode }) => ({
             },
           },
           '/quotes/captives-war',
+          '/quotes/the-expanse',
           '/books',
         ],
       },

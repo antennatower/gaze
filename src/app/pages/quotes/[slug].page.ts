@@ -11,7 +11,7 @@ import QuoteAttributes from './quote-attributes';
     @if (quote$ | async; as quote) {
       <article class="w-full text-start">
         <div class="mb-9 justify-self-center">
-          <analog-markdown class="text-2xl" [content]="quote.content" />
+          <analog-markdown class="text-l" [content]="quote.content" />
         </div>
         <footer class="flex justify-between items-end border-t-2 border-dotted border-black ">
           <p class="text-sm italic underline">

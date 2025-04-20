@@ -4,4 +4,5 @@ export default interface QuoteAttributes {
   source: string;
   categories: string[];
   subdirectory: string;
+  date: string;
 }

@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
         >
           - {{ quote.attributes.title }}
         </a>
-        <footer class="flex justify-between items-end">
+        <footer class="flex justify-between items-start">
           <p class="text-sm italic">
             {{ quote.attributes.source }}
           </p>
@@ -39,5 +39,5 @@ import { RouterLink } from '@angular/router';
 export default class QuotesComponent {
   readonly quotesFiles = injectContentFiles<QuoteAttributes>((file) =>
     file.filename.includes('/src/content/quotes/'),
-  );
+  ).sort((a, b) => b.attributes.date.localeCompare(a.attributes.date));
 }

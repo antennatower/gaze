@@ -16,7 +16,7 @@ import PostAttributes from './post-attributes';
         >
           - {{ post.attributes.title }}
         </a>
-        <footer class="flex justify-between items-end">
+        <footer class="flex justify-between items-start">
           <p class="text-sm italic">
             {{ post.attributes.description }}
           </p>
@@ -38,5 +38,5 @@ import PostAttributes from './post-attributes';
 export default class PostsComponent {
   readonly posts = injectContentFiles<PostAttributes>((file) =>
     file.filename.includes('/src/content/posts/'),
-  );
+  ).sort((a, b) => b.attributes.date.localeCompare(a.attributes.date));
 }
