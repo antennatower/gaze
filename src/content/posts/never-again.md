@@ -1,5 +1,5 @@
 ---
-title: 'Never again'
+title: '"Never again"'
 slug: 2025-04-20-never-again
 description: Please believe in hope.
 coverImage: https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_14/3462656/210704-holocaust-mb-1043.jpg

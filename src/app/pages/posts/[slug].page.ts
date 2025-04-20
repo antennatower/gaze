@@ -7,6 +7,7 @@ import PostAttributes from './post-attributes';
 @Component({
   template: `
     @if (post$ | async; as post) {
+      <h1 class="gaze-subtitle">{{ post.attributes.title }}</h1>
       <article>
         <img [src]="post.attributes.coverImage" />
         <analog-markdown [content]="post.content" />

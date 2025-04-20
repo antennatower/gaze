@@ -9,11 +9,14 @@ import QuoteAttributes from './quote-attributes';
 @Component({
   template: `
     @if (quote$ | async; as quote) {
+      <h1 class="gaze-subtitle">{{ quote.attributes.title }}</h1>
       <article class="w-full text-start">
         <div class="mb-9 justify-self-center">
           <analog-markdown class="text-l" [content]="quote.content" />
         </div>
-        <footer class="flex justify-between items-end border-t-2 border-dotted border-black ">
+        <footer
+          class="flex justify-between items-end border-t-2 border-dotted border-black "
+        >
           <p class="text-sm italic underline">
             {{ quote.attributes.source }}
           </p>
