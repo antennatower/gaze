@@ -47,7 +47,7 @@
   }
 
   .gaze-subtitle {
-    @apply text-2xl font-bold text-center underline decoration-double mb-2 select-none;
+    @apply text-2xl font-bold text-center underline decoration-double mb-2 select-none cursor-default;
   }
 
   .gaze-scrollbar {
