@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     analog({
+      ssr: false,
       content: {
         highlighter: 'prism',
       },
