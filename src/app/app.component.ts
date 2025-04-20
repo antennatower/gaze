@@ -14,14 +14,13 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         <nav class="flex items-start gap-5 border-b-black border-b-2 mb-2">
           <a class="gaze-anchor" routerLink="/">Blog</a>
           <a class="gaze-anchor" routerLink="/quotes">Quotes</a>
-          <a class="gaze-anchor" routerLink="/books">Books</a>
         </nav>
       </div>
       <div class="max-h-[88vh] overflow-y-auto gaze-scrollbar">
         <router-outlet />
       </div>
       <footer
-        class="text-sm italic sticky left-[50%]  bottom-0"
+        class="text-sm italic absolute left-[50]  bottom-0"
       >
         <p>
           <a
@@ -34,7 +33,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
           &nbsp;|&nbsp;
           <a
             class="no-underline"
-            href="https://github.com/antennatower/gaze/blob/main/LICENSE"
+            href="https://github.com/antennatower/gaze/blob/master/LICENSE"
             target="_blank"
           >
             License
