@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     analog({
+      ssr: false,
       content: {
         highlighter: 'prism',
       },
@@ -21,15 +22,13 @@ export default defineConfig(({ mode }) => ({
           {
             contentDir: 'src/content/blog',
             transform: (file: PrerenderContentFile) => {
-              // do not include files marked as draft in frontmatter
-              if (file.attributes['draft']) {
-                return false;
-              }
-              // use the slug from frontmatter if defined, otherwise use the files basename
+              if (file.attributes['draft']) return false;
               const slug = file.attributes['slug'] || file.name;
               return `/blog/${slug}`;
             },
           },
+          '/quotes/captives-war',
+          '/books',
         ],
       },
     }),

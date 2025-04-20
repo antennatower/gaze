@@ -1,26 +1,48 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { injectContentFiles } from '@analogjs/content';
+import { injectContent, injectContentFiles } from '@analogjs/content';
+import { Component, effect } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 
-import PostAttributes from '../blog/post-attributes';
+import QuoteAttributes from './quote-attributes';
+import { zip } from 'rxjs';
 
 @Component({
   template: `
-    <h1>Quotes</h1>
+    <h1 class="gaze-subtitle">Quotes</h1>
 
-    @for (post of posts; track post.attributes.slug) {
-      <a [routerLink]="['/quotes/', post.attributes.slug]">
-        <h2>{{ post.attributes.title }}</h2>
-        <p>{{ post.attributes.description }}</p>
-      </a>
+    @for (quote of quotesFiles; track quote.attributes.slug) {
+      <article class="border-b-2 border-dotted border-black py-2">
+        <p>
+          {{ quote.content }}
+        </p>
+        <footer class="flex justify-between items-end">
+          <p class="text-sm italic">
+            {{ quote.attributes.source }}
+          </p>
+          <div>
+            @for (category of quote.attributes.categories; track $index) {
+              <p class="text-sm italic">
+                {{ category }}
+              </p>
+            }
+          </div>
+        </footer>
+      </article>
     }
   `,
-  imports: [RouterLink],
   selector: 'app-quotes',
   standalone: true,
 })
 export default class QuotesComponent {
-  readonly posts = injectContentFiles<PostAttributes>((file) =>
+  readonly quotesFiles = injectContentFiles<QuoteAttributes>((file) =>
     file.filename.includes('/src/content/quotes/'),
   );
+
+  readonly quotes = injectContent<QuoteAttributes>({
+    customFilename: 'quotes/captives-war/what-is-is.md',
+  });
+
+  constructor() {
+    this.quotes.subscribe(console.log);
+    console.log(this.quotesFiles)
+  }
 }
