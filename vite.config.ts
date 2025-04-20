@@ -20,11 +20,11 @@ export default defineConfig(({ mode }) => ({
       prerender: {
         routes: [
           {
-            contentDir: 'src/content/blog',
+            contentDir: 'src/content/posts',
             transform: (file: PrerenderContentFile) => {
               if (file.attributes['draft']) return false;
               const slug = file.attributes['slug'] || file.name;
-              return `/blog/${slug}`;
+              return `/posts/${slug}`;
             },
           },
           '/quotes/captives-war',

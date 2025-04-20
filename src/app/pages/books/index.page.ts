@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { injectContentFiles } from '@analogjs/content';
 
-import PostAttributes from '../blog/post-attributes';
+import PostAttributes from '../posts/post-attributes';
 
 @Component({
   template: `

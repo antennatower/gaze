@@ -1,9 +1,8 @@
-import { injectContent, injectContentFiles } from '@analogjs/content';
-import { Component, effect } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { injectContentFiles } from '@analogjs/content';
+import { Component } from '@angular/core';
 
 import QuoteAttributes from './quote-attributes';
-import { zip } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   template: `
@@ -11,9 +10,13 @@ import { zip } from 'rxjs';
 
     @for (quote of quotesFiles; track quote.attributes.slug) {
       <article class="border-b-2 border-dotted border-black py-2">
-        <p>
-          {{ quote.content }}
-        </p>
+        <a
+          class="not-italic no-underline"
+          [routerLink]="['/quotes/', quote.attributes.slug]"
+          [queryParams]="{ subdirectory: quote.attributes.subdirectory }"
+        >
+          - {{ quote.attributes.title }}
+        </a>
         <footer class="flex justify-between items-end">
           <p class="text-sm italic">
             {{ quote.attributes.source }}
@@ -29,6 +32,7 @@ import { zip } from 'rxjs';
       </article>
     }
   `,
+  imports: [RouterLink],
   selector: 'app-quotes',
   standalone: true,
 })
@@ -36,13 +40,4 @@ export default class QuotesComponent {
   readonly quotesFiles = injectContentFiles<QuoteAttributes>((file) =>
     file.filename.includes('/src/content/quotes/'),
   );
-
-  readonly quotes = injectContent<QuoteAttributes>({
-    customFilename: 'quotes/captives-war/what-is-is.md',
-  });
-
-  constructor() {
-    this.quotes.subscribe(console.log);
-    console.log(this.quotesFiles)
-  }
 }

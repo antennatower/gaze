@@ -3,7 +3,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   template: `
-    <main>
+    <main class="max-h-[90vh]">
       <div class="mb-2">
         <h1
           routerLink="/"
@@ -17,7 +17,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
           <a class="gaze-anchor" routerLink="/books">Books</a>
         </nav>
       </div>
-      <router-outlet />
+      <div class="max-h-[90vh] overflow-y-auto gaze-scrollbar">
+        <router-outlet />
+      </div>
     </main>
   `,
   imports: [RouterLink, RouterOutlet],

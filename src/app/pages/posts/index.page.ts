@@ -12,7 +12,7 @@ import PostAttributes from './post-attributes';
       <article class="border-b-2 border-dotted border-black py-2">
         <a
           class="not-italic no-underline"
-          [routerLink]="['/blog/', post.attributes.slug]"
+          [routerLink]="['/posts/', post.attributes.slug]"
         >
           - {{ post.attributes.title }}
         </a>
@@ -32,11 +32,11 @@ import PostAttributes from './post-attributes';
     }
   `,
   imports: [RouterLink],
-  selector: 'app-blog',
+  selector: 'app-posts',
   standalone: true,
 })
-export default class BlogComponent {
+export default class PostsComponent {
   readonly posts = injectContentFiles<PostAttributes>((file) =>
-    file.filename.includes('/src/content/blog/'),
+    file.filename.includes('/src/content/posts/'),
   );
 }
