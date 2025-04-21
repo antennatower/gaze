@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
     <h1 class="gaze-subtitle">Quotes</h1>
 
     @for (quote of quotesFiles; track quote.attributes.slug) {
-      <article class="border-b-2 border-dotted border-black py-2">
+      <article class="border-b-2 border-dotted border-neutral-300 py-2">
         <a
           class="not-italic no-underline"
           [routerLink]="['/quotes/', quote.attributes.slug]"

@@ -9,7 +9,7 @@ import PostAttributes from './post-attributes';
     <h1 class="gaze-subtitle">Thoughts & ramblings</h1>
 
     @for (post of posts; track post.attributes.slug) {
-      <article class="border-b-2 border-dotted border-black py-2">
+      <article class="border-b-2 border-dotted border-neutral-300 py-2">
         <a
           class="not-italic no-underline"
           [routerLink]="['/posts/', post.attributes.slug]"

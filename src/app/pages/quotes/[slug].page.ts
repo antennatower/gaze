@@ -15,7 +15,7 @@ import QuoteAttributes from './quote-attributes';
           <analog-markdown class="text-l" [content]="quote.content" />
         </div>
         <footer
-          class="flex justify-between items-end border-t-2 border-dotted border-black "
+          class="flex justify-between items-end border-t-2 border-dotted border-neutral-300 "
         >
           <p class="text-sm italic underline decoration-dotted">
             {{ quote.attributes.source }}
