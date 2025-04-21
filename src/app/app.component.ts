@@ -14,14 +14,13 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         <nav class="flex items-start gap-5 border-b-black border-b-2 mb-2">
           <a class="gaze-anchor" routerLink="/">Blog</a>
           <a class="gaze-anchor" routerLink="/quotes">Quotes</a>
+          <a class="gaze-anchor" routerLink="/links">Links</a>
         </nav>
       </div>
       <div class="max-h-[88vh] overflow-y-auto gaze-scrollbar">
         <router-outlet />
       </div>
-      <footer
-        class="text-sm italic absolute left-[50]  bottom-0"
-      >
+      <footer class="text-sm italic absolute left-[50]  bottom-0">
         <p>
           <a
             class="no-underline"

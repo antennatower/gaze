@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => ({
       },
       prerender: {
         routes: [
+          '/links.md',
           {
             contentDir: 'src/content/posts',
             transform: (file: PrerenderContentFile) => {
