@@ -8,8 +8,8 @@ import PostAttributes from './post-attributes';
   template: `
     @if (post$ | async; as post) {
       <h1 class="gaze-subtitle">{{ post.attributes.title }}</h1>
-      <article>
-        <img [src]="post.attributes.coverImage" />
+      <article class="overflow-hidden">
+        <img [src]="post.attributes.coverImage" class="float-left w-72 m-4" />
         <analog-markdown [content]="post.content" />
       </article>
       <!-- do the decoration on top -->
