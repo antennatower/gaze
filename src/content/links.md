@@ -3,7 +3,7 @@
 
 ## Profiles
 
-- [StoryGraph](https://app.thestorygraph.com/profile/antennatower)
+- [Email](mailto:antennatower@proton.me)
 - [GitHub](https://github.com/antennatower)
 
 ## Projects
